@@ -1,0 +1,11 @@
+
+services:
+
+  # Put other services here and what not.
+
+  cloudflared:
+    image: cloudflare/cloudflared
+    command: tunnel --no-autoupdate run
+    env_file: .env_cloudflare # This is the file where you store your cloudflard access token, all config is done in the web portal at cloudflare zero trust.
+    restart: unless-stopped
+    
